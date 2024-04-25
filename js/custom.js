@@ -32,6 +32,7 @@ var inputLast_name = document.getElementById('input-last_name');
 var inputPhoneNumber = document.getElementById('input-phone_number');
 var inputHomeAddress = document.getElementById('input-home_address');
 var inputEmail = document.getElementById('input-email');
+var inputBirthday = document.getElementById('input-birthday');
 
 toStep1.addEventListener('click', function () {
     Step0.classList.add('hidden');
@@ -85,8 +86,13 @@ toStep4.addEventListener('click', function () {
     toStep4.disabled = false;
 });
 toStep5.addEventListener('click', function () {
+    if (inputBirthday.value == '') {
+        toStep5.disabled = true;
+    } else {
     Step4.classList.add('hidden');
     Step5.classList.remove('hidden');
+    }
+    toStep5.disabled = false;
 });
 toStep6.addEventListener('click', function () {
     if (inputFirst_name.value == '' || inputLast_name.value == '') {
